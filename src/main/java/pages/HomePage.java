@@ -28,11 +28,7 @@ public class HomePage {
         clickLink("Hovers");
         return new HoversPage(driver);
     }
-    private void clickLink(String linkText){
-        driver.findElement(By.linkText(linkText)).click();
-    }
-
-    public KeyPressesPage clickKeyPresses(){
+       public KeyPressesPage clickKeyPresses(){
         clickLink("Key Presses");
         return new KeyPressesPage(driver);
     }
@@ -53,5 +49,20 @@ public class HomePage {
     public ContextMenuPage clickContextMenu(){
         clickLink("Context Menu");
         return new ContextMenuPage(driver);
+    }
+
+    public WysiwygPage clickWysiwgEditor(){
+        clickLink("WYSIWYG Editor");
+        return new WysiwygPage(driver);
+    }
+
+    public NestedFramesPage clickFramesPage(){
+        clickLink("Frames");
+        clickLink("Nested Frames");
+        return new NestedFramesPage(driver);
+
+    }
+    private void clickLink(String linkText){
+        driver.findElement(By.linkText(linkText)).click();
     }
 }
