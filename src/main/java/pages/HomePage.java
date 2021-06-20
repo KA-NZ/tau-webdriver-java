@@ -62,11 +62,24 @@ public class HomePage {
         return new NestedFramesPage(driver);
 
     }
-
     public DynamicLoadingPage clickDynamicLoading(){
         clickLink("Dynamic Loading");
         return new DynamicLoadingPage(driver);
     }
+    public LargeAndDeepDomPage clickLargeAndDeepDom(){
+        clickLink("Large & Deep DOM");
+        return new LargeAndDeepDomPage(driver);
+    }
+    public InfiniteScrollPage clickInfiniteScroll(){
+        clickLink("Infinte Scroll");
+        return new InfiniteScrollPage(driver);
+    }
+
+    public DropdownListPage clickDropdownList(){
+        clickLink("Dropdown");
+        return new DropdownListPage(driver);
+    }
+
     private void clickLink(String linkText){
         driver.findElement(By.linkText(linkText)).click();
     }
